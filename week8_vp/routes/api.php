@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\FavoriteController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,6 @@ Route::get('check_password',[UserController::class,'checkPassword']);
 Route::post('create_user',[UserController::class,'createUser']);
 Route::patch('update_user',[UserController::class,'updateUser']);
 Route::delete('delete_user',[UserController::class,'deleteUser']);
+Route::post('create_favorit',[FavoriteController::class,'CreateFavorit']);
+Route::get('favorit',[FavoriteController::class,'ListFavorit']);
+Route::get('',[FavoriteController::class,'']);
