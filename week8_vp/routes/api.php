@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\FavoriteController;
+use App\Http\Controllers\Api\AuthenticationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,7 @@ Route::delete('delete_user',[UserController::class,'deleteUser']);
 Route::post('create_favorit',[FavoriteController::class,'CreateFavorit']);
 Route::get('favorit',[FavoriteController::class,'ListFavorit']);
 Route::delete('Delete_it',[FavoriteController::class,'DeleteFavorit']);
+
+
+Route::post('login',[AuthenticationController::class,'login']);
+Route::delete('logout',[AuthenticationController::class,'logout']);
