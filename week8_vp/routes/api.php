@@ -32,3 +32,15 @@ Route::delete('Delete_it',[FavoriteController::class,'DeleteFavorit']);
 
 Route::post('login',[AuthenticationController::class,'login']);
 Route::delete('logout',[AuthenticationController::class,'logout']);
+Route::middleware(['auth:sanctum'])->group(
+    function(){
+        Route::get('all_user',[UserController::class,'getAllUser']);
+        Route::get('check_password',[UserController::class,'checkPassword']);
+        Route::post('create_user',[UserController::class,'createUser']);
+        Route::patch('update_user',[UserController::class,'updateUser']);
+        Route::delete('delete_user',[UserController::class,'deleteUser']);
+        Route::post('create_favorit',[FavoriteController::class,'CreateFavorit']);
+        Route::get('favorit',[FavoriteController::class,'ListFavorit']);
+        Route::delete('Delete_it',[FavoriteController::class,'DeleteFavorit']);
+    }
+);
