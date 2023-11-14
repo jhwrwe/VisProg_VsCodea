@@ -26,4 +26,4 @@ Route::patch('update_user',[UserController::class,'updateUser']);
 Route::delete('delete_user',[UserController::class,'deleteUser']);
 Route::post('create_favorit',[FavoriteController::class,'CreateFavorit']);
 Route::get('favorit',[FavoriteController::class,'ListFavorit']);
-Route::get('',[FavoriteController::class,'']);
+Route::delete('Delete_it',[FavoriteController::class,'DeleteFavorit']);

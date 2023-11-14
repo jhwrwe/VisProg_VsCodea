@@ -26,12 +26,22 @@ class FavoriteController extends Controller
     }
     public function CreateFavorit (Request $request){
         $favorit = new favorite();
-        $favorit->user_id = $request->user()->user_id;
-        $favorit->movie_id = $request->user()->movie_id;
+        $favorit->user_id = $request->user_id;
+        $favorit->movie_id = $request->movie_id;
         $favorit->save();
         return[
             'status'=> Response::HTTP_OK,
             'message'=>'Success',
+            'data'=> $favorit
+
+        ];
+    }
+    public function DeleteFavorit (Request $request){
+        $favorit = favorite::where('id', $request->id)->first();
+        $favorit->delete();
+        return[
+            'status'=> Response::HTTP_OK,
+            'message'=>'deleted',
             'data'=> $favorit
 
         ];
